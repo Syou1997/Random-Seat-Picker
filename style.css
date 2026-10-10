@@ -1,0 +1,189 @@
+
+/* 全体設定 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 30px 15px;
+  font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
+  background: #f3f6fb;
+  color: #243247;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* タイトル */
+h1 {
+  margin: 0 0 10px;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin-bottom: 25px;
+  color: #64748b;
+  font-size: 15px;
+}
+
+/* 教室 */
+.classroom {
+  padding: 30px 25px;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 16px;
+}
+
+/* ボタン共通 */
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 14px 38px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* 抽選ボタン */
+#drawButton {
+  display: block;
+  width: 65%;
+  max-width: 350px;
+  margin: 0 auto 15px;
+  background: #2563eb;
+  color: white;
+}
+
+#drawButton:hover {
+  background: #1d4ed8;
+}
+
+#drawButton:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* 教卓 */
+.teacher-desk {
+  width: 65%;
+  max-width: 350px;
+  margin: 0 auto 35px;
+  padding: 18px;
+  background: #dce4ed;
+  border: 2px solid #94a3b8;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* 座席配置：横4席 × 縦5列 */
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* 通常の座席 */
+.seat {
+  aspect-ratio: 1.5 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e2e8f0;
+  border: 2px solid #94a3b8;
+  border-radius: 8px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  transition:
+    background 0.25s,
+    transform 0.25s;
+}
+
+/* 指名された座席 */
+.seat.selected {
+  background: #facc15;
+  border-color: #eab308;
+  color: #422006;
+  transform: scale(1.05);
+}
+
+/* 抽選結果 */
+.result-panel {
+  padding: 25px 15px;
+}
+
+#result {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: bold;
+  min-height: 36px;
+}
+
+#counter {
+  margin-bottom: 20px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* リセットボタン */
+#resetButton {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+#resetButton:hover {
+  background: #cbd5e1;
+}
+
+/* キーボード操作の説明 */
+.keyboard-hint {
+  margin-top: 18px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* スマートフォン対応 */
+@media (max-width: 480px) {
+
+  body {
+    padding: 20px 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .classroom {
+    padding: 20px 12px;
+  }
+
+  .seat-grid {
+    gap: 8px;
+  }
+
+  .seat {
+    font-size: 16px;
+  }
+
+  .teacher-desk {
+    font-size: 18px;
+  }
+
+  #result {
+    font-size: 20px;
+  }
+
+  #drawButton {
+    width: 75%;
+  }
+}

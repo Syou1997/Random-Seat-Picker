@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>座席ランダム指名システム</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="container">
+
+    <h1>座席ランダム指名システム</h1>
+    <p class="subtitle">20席（横4席 × 縦5列）</p>
+
+    <section class="classroom">
+
+      <!-- 抽選ボタン -->
+      <button id="drawButton" type="button">
+        抽選
+      </button>
+
+      <!-- 教卓 -->
+      <div class="teacher-desk">
+        教卓
+      </div>
+
+      <!-- 座席 -->
+      <div id="seatGrid" class="seat-grid"></div>
+
+    </section>
+
+    <!-- 抽選結果 -->
+    <section class="result-panel">
+
+      <p id="result" aria-live="polite">
+        「抽選」を押してください。
+      </p>
+
+      <p id="counter">
+        指名済み：0 / 20席
+      </p>
+
+      <button id="resetButton" type="button">
+        リセット
+      </button>
+
+      <p class="keyboard-hint">
+        Enterキーでも抽選できます。
+      </p>
+
+    </section>
+
+  </main>
+</body>
+</html>
